@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 /*
  13. Un obrero necesita calcular su salario semanal, el cual se obtiene de la siguiente manera:
-• Si trabaja 40 horas o menos se le paga $16 por hora (crear una constante para almacenar el 16)
-• Si trabaja más de 40 horas se le paga $16 por cada una de las primeras 40 horas y $20 por cada hora extra. (crear una constante para almacenar el 20)
+ï¿½ Si trabaja 40 horas o menos se le paga $16 por hora (crear una constante para almacenar el 16)
+ï¿½ Si trabaja mï¿½s de 40 horas se le paga $16 por cada una de las primeras 40 horas y $20 por cada hora extra. (crear una constante para almacenar el 20)
 Pedir al usuario que ingrese la cantidad de horas trabajadas en la semana, y mostrar por pantalla el salario correspondiente.
  */
 
@@ -14,7 +14,7 @@ public class Ejercicio13 {
 	static Scanner ingreso =new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		
 		final int primerasHoras=16;
 		final int pasadasHoras=20;
@@ -28,7 +28,7 @@ public class Ejercicio13 {
 	}
 
 	private static int calcularSalario(int horas, int primerasHoras, int pasadasHoras, int maximoHoras) {
-		// TODO Auto-generated method stub
+		
 		int result = 0;
 		
 		if (horas>maximoHoras) {
@@ -42,7 +42,7 @@ public class Ejercicio13 {
 	}
 
 	private static int ingreseNumero(String mensaje) {
-		// TODO Auto-generated method stub
+		
 		int result;
 		
 		System.out.println(mensaje);
