@@ -1,2 +1,2 @@
 # portfolio
-Diferentes trabajos y programas que hago en varios programas
+Diferentes trabajos y programas que hago en varios lenguajes
