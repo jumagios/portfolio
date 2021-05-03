@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,500&display=swap');
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: rgb(255, 250, 255);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    line-height: 1.8;
+    background-image: linear-gradient( 115deg, rgba(228, 126, 124, 0.8), rgba(228, 126, 94, 0.7)), url(http://www.periodistadigital.com/imagenes/2010/03/08/Recursos-gente-trabajando-W.jpg);
+}
+
+#survey-form {
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(114, 24, 24, 0.8);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 70px 50px 70px 50px;
+    border-style: hidden;
+    border-radius: 12px;
+}
+
+fieldset {
+    border-radius: 12px;
+    border-color: rgb(255, 250, 255);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin: auto;
+}
+
+.big-field {
+    width: 100%;
+    height: 25px;
+    border-style: none;
+    border-radius: 3px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+#submit {
+    background-color: #37af65;
+    color: rgb(255, 250, 255);
+    border: none;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+}
+
+.form-group {
+    margin: 0 auto 25px auto;
+}

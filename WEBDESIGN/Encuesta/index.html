@@ -1,0 +1,77 @@
+<main id="main">
+
+    <head>
+        <title>Survey Form</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    </head>
+    <header>
+        <h1 id="title" class="text-center text-white">Encuesta</h1>
+        <p id="description" class="description text-center text-white">Esta es una pequeña encuesta que voy a realizar sobre las vacas locas</p>
+    </header>
+
+    <body>
+        <form id="survey-form">
+            <fieldset>
+                <legend class="text-white">Personal Information</legend>
+                <div class="form-group">
+                    <label for="name" id="name-label" class="text-white">Name</label>
+                    <input class="big-field" id="name" type="text" placeholder="Enter your name.." required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="email-label" class="text-white">Email</label>
+                    <input class="big-field" id="email" type="email" placeholder="Enter your email.." required>
+                </div>
+                <div class="form-group">
+                    <label for="number" id="number-label" class="text-white">Age</label>
+                    <input class="big-field" id="number" value="age" type="number" placeholder="Age" min="10" max="70">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend class="text-white">Selecting Information</legend>
+                <div class="form-group">
+                    <label for="dropdown" id="dropdown" class="text-white">Stuff</label>
+                    <select class="big-field" id="dropdown">
+            <option value = "1">Uno</option>
+            <option value = "2">Dos</option>
+            <option value = "3">Tres</option>
+            <option value = "4">Cuatro</option>
+          </select>
+                </div>
+                <div class="form-group">
+                    <p class="text-white">Would you recommend?</p>
+                    <label for="recommend" class="text-white">
+            <input name="recommend" value="Definitely" type="radio" class="input-radio" checked/>Definitely</label>
+                    <label for="recommend" class="text-white">
+            <input name="recommend" value="Maybe" type="radio" class="input-radio"/>Maybe</label>
+                    <label for="recommend" class="text-white">
+            <input name="recommend" value="Never" type="radio" class="input-radio"/>Never</label>
+                </div>
+                <div class="form-group">
+                    <p class="text-white">Choose one or more options</p>
+                    <label for="choose" class="text-white">
+            <input name="choose" value="Opcion 1" type="checkbox" class="input-checkbox"/>Opcion 1</label>
+                    <label for="choose" class="text-white">
+            <input name="choose" value="Opcion 2" type="checkbox" class="input-checkbox"/>Opcion 2</label>
+                    <label for="choose" class="text-white">
+            <input name="choose" value="Opcion 3" type="checkbox" class="input-checkbox"/>Opcion 3</label>
+                    <label for="choose" class="text-white">
+            <input name="choose" value="Opcion 4" type="checkbox" class="input-checkbox"/>Opcion 4</label>
+                    <label for="choose" class="text-white">
+            <input name="choose" value="Opcion 5" type="checkbox" class="input-checkbox"/>Opcion 5</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend class="text-white">Sending Information</legend>
+                <div class="form-group">
+                    <p class="text-white">Additional Comments:</p>
+                    <label for="add-comment">
+            <textarea id="add-comment" name="comment" class="input-textarea" placeholder="Enter your comment here..."></textarea>
+          </label>
+                </div>
+                <div class="div-submit">
+                    <button type="submit" id="submit" class="submit-button">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</main>
