@@ -1,0 +1,24 @@
+{
+  "main": "index.js",
+  "name": "javascript-koans",
+  "description": "Update ======",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "koans": "node ./koans.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipetus/JavaScript-Koans.git"
+  },
+  "keywords": [
+    "javascript",
+    "koans"
+  ],
+  "author": "Juan Gimenez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pipetus/JavaScript-Koans/issues"
+  },
+  "homepage": "https://github.com/pipetus/JavaScript-Koans#readme"
+}
