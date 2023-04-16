@@ -61,4 +61,5 @@ question_data = [
      "correct_answer": "False", "incorrect_answers": ["True"]},
     {"category": "Science & Nature", "type": "boolean", "difficulty": "medium",
      "question": "The most frequent subconscious activity repeated by the human body is blinking.",
-     "correct_answer": "False", "incorrect_answers": ["True"]}]
+     "correct_answer": "False", "incorrect_answers": ["True"]}
+]
