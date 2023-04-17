@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-STARTING_POSITION = [(-40, 0), (-20, 0), (0, 0)]
+STARTING_POSITION = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
@@ -17,12 +17,19 @@ class Snake:
 
     def create_snake(self):
         for position in STARTING_POSITION:
-            new_square = Turtle(shape="square")
-            new_square.color("white")
-            new_square.penup()
-            new_square.goto(position)
-            self.segments.append(new_square)
+            self.add_segment(position)
 
+
+
+    def add_segment(self, position):
+        new_square = Turtle(shape="square")
+        new_square.color("white")
+        new_square.penup()
+        new_square.goto(position)
+        self.segments.append(new_square)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
@@ -42,3 +49,5 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.segments[0].setheading(RIGHT)
+
+
