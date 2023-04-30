@@ -31,13 +31,7 @@ while len(correct) < 50:
         state_word.write(arg=answer_state)
         correct.append(answer_state)
 
-
-
-for states in all_states:
-    if states not in correct:
-        missing_states.append(states)
+missing_states = [state for state in all_states if state not in correct]
 
 df = pandas.DataFrame(missing_states)
 df.to_csv("states_to_learn.csv")
-
-
