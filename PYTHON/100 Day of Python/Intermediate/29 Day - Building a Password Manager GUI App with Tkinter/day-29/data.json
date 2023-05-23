@@ -2,5 +2,13 @@
     "Facebook": {
         "email": "juangimenezos@hotmail.com",
         "password": "Fo7Pe2A)Y)&N64A"
+    },
+    "Google": {
+        "email": "pedropascalito45@gmail.com",
+        "password": "pata1234"
+    },
+    "Yahoo": {
+        "email": "juniorpascalito@yahoo.com",
+        "password": "pata1234"
     }
 }
