@@ -1,0 +1,5 @@
+CREATE USER john@127.0.0.18446744073709551614;
+
+CREATE USER john@'%.codewithmosh.com';
+
+CREATE USER john IDENTIFIED BY 'sadsad231312d2ssad3';

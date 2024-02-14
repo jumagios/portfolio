@@ -32,9 +32,10 @@ password = "mtfiiycciewxrinw"
 
 
 now = dt.datetime.now()
-actual_day = now.weekday() 
+actual_day = now.weekday()
+print(actual_day)
 list_of_quotes = []
-if actual_day == 6:
+if actual_day == 2:
     with open("quotes.txt", "r") as new_file:
         list_of_quotes = [line.rstrip() for line in new_file]
 
