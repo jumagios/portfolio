@@ -3,6 +3,13 @@ from quiz_brain import QuizBrain
 
 THEME_COLOR = "#375362"
 
+
+
+
+
+
+
+
 class QuizInterface:
 
     def __init__(self, quiz_brain: QuizBrain):
@@ -23,10 +30,10 @@ class QuizInterface:
 
         #Buttons
         cancel_image = PhotoImage(file="images/false.png")
-        self.cancel_button = Button(image=cancel_image, highlightthickness=0)
+        self.cancel_button = Button(image=cancel_image, highlightthickness=0, command=self.cancel_question)
         self.cancel_button.grid(row=2, column=0)
         confirm_image = PhotoImage(file="images/true.png")
-        self.confirm_button = Button(image=confirm_image, highlightthickness=0)
+        self.confirm_button = Button(image=confirm_image, highlightthickness=0, command=confirm_question)
         self.confirm_button.grid(row=2, column=1)
 
         #Text
@@ -44,5 +51,11 @@ class QuizInterface:
     def get_next_question(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
+
+    def cancel_question(self):
+        self.quiz.check_answer("False")
+
+    def confirm_question(self):
+        self.quiz.check_answer("True")
 
 
