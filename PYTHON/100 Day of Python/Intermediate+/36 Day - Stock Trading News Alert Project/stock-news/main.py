@@ -17,12 +17,6 @@ yesterday = today - timedelta(days=1)
 day_before = yesterday - timedelta(days=1)
 
 
-## STEP 1: Use https://newsapi.org/docs/endpoints/everything
-# When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
-# HINT 1: Get the closing price for yesterday and the day before yesterday. Find the positive difference between the two prices. e.g. 40 - 20 = -20, but the positive difference is 20.
-# HINT 2: Work out the value of 5% of yerstday's closing stock price.
-
-
 def telegram_bot(bot_message):
     bot_token = TELEGRAM_API_KEY
     bot_chatID = telegram_bot_chat_id
@@ -50,13 +44,7 @@ def get_difference_price():
     if abs(difference) >= 5:
         get_news()
     else:
-        get_news()
-        telegram_bot("Hello WOrld")
-
-
-## STEP 2: Use https://newsapi.org/docs/endpoints/everything
-# Instead of printing ("Get News"), actually fetch the first 3 articles for the COMPANY_NAME. 
-# HINT 1: Think about using the Python Slice Operator
+        telegram_bot(get_news())
 
 def get_news():
     parameters = {
@@ -70,31 +58,9 @@ def get_news():
 
     data = response.json()["articles"]
     for article in data:
-        print(f'Headline: {article["title"]}')
-        print(f'Brief: {article["description"]}')
+        return f'{STOCK}:\nHeadline: {article["title"]} \nBrief: {article["description"]}'
 
 
 
 get_difference_price()
 
-
-## STEP 3: Use telegram bot
-# Send a separate message with each article's title and description to your bot.
-# HINT 1: Consider using a List Comprehension.
-
-
-
-
-
-
-
-# Optional: Format the SMS message like this:
-"""
-TSLA: 🔺2%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-or
-"TSLA: 🔻5%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-"""
