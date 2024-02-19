@@ -26,7 +26,7 @@ def telegram_bot(bot_message):
 
     return r.json()
 
-def get_difference_price():
+
     stock_params = {
         "function": "TIME_SERIES_DAILY",
         "symbol": STOCK,
@@ -40,27 +40,30 @@ def get_difference_price():
     today_data_closing_price = float(data_list[0]['4. close'])
     yesterday_data_closing_price = float(data_list[1]['4. close'])
     difference = ((today_data_closing_price - yesterday_data_closing_price) / yesterday_data_closing_price) * 100
-
-    if abs(difference) >= 5:
-        get_news()
+    diff_percent = round(difference)
+    up_down = None
+    if difference > 0:
+        up_down = "🔺"
     else:
-        telegram_bot(get_news())
+        up_down = "🔻"
 
-def get_news():
-    parameters = {
-        "q": '"Tesla Inc." and TSLA',
-        "from": day_before,
-        "to": today,
-        "sortBy": "relevancy",
-        "apiKey": NEWS_API_KEY,
-    }
-    response = requests.get(url=NEWS_ENDPOINT, params=parameters)
+    if abs(difference) > 1:
+        news_params = {
+            "q": COMPANY_NAME,
+            "searchIn": "title",
+            "sortBy": "relevancy",
+            "apiKey": NEWS_API_KEY,
+        }
+        
+    response = requests.get(url=NEWS_ENDPOINT, params=news_params)
+    articles = response.json()["articles"]
+    three_articles = articles[:3]
 
-    data = response.json()["articles"]
-    for article in data:
-        return f'{STOCK}:\nHeadline: {article["title"]} \nBrief: {article["description"]}'
+    formatted_articles = [f'{STOCK}: {up_down}{diff_percent}\nHeadline: {article["title"]} \nBrief: {article["description"]}' for article in three_articles]
+
+    for article in formatted_articles:
+        telegram_bot(article)
 
 
 
-get_difference_price()
 
