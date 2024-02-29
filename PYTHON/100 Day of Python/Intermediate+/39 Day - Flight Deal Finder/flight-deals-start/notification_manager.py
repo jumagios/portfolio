@@ -2,7 +2,7 @@
 import requests
 import os
 
-TELEGRAM_API_KEY = os.envirob.get('tg_key')
+TELEGRAM_API_KEY = os.environ.get('tg_key')
 telegram_bot_chat_id = os.environ.get('tg_id')
 
 
